@@ -14,20 +14,65 @@
 
 <body>
     <!-- Cabecera -->
-    <h1 class="estCeleste">¡o melhor do mundo!</h1>
+    <h1 class="estCeleste">¡Verifica tu Sesion!</h1>
+
+    
+        <!-- Formulario de correo -->
+    <form>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>  
+
+
     <!-- class=nombreEstiloCss -->
     <p class="estRojo">Crack:</p>
-    
     <p class="estAzul">Hola, sitio web activo:</p>
     <!-- Aplicamos el box del archivo css -->
     <div class="box">
         <!-- para importar una Imagen en la carpta de Images -->
         <img src="images/ronaldinho.jpg" alt="ronaldinho" width="200">
         <div class="box">
-            <img src="images/perro.jpg" alt="ronaldinho" width="300">
+            <img src="images/perro.jpg" alt="ronaldinho" width="250">
         <div class="container">
         <img src="images/viejoak.jpg" alt="Ak" width="400">
+          
+  <script>
+    // Función para crear corazones
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤️";
+
+      // Posición horizontal aleatoria
+      heart.style.left = Math.random() * 100 + "vw";
+
+      // Duración de la animación aleatoria
+      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+
+      document.body.appendChild(heart);
+
+      // Eliminar corazón después de la animación
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    // Crear corazones cada 300 ms
+    setInterval(createHeart, 300);
+  </script>
+
 
 </body>
-
 </html>
