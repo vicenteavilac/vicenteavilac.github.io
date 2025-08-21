@@ -1,0 +1,39 @@
+html {
+    font-size: 16px; /* Tamaño de letra base para rem */
+}
+
+body {
+    font-size: 1rem; /* Tamaño de letra relativo al documento */
+}
+
+.container {
+    width: 70%; /* Ancho relativo al contenedor */
+    height: 20vh; /* Alto relativo al viewport */
+    padding: 20px; /* Padding en píxeles */
+    border: 1cm solid black; /* Borde en centímetros */
+    margin: 2in auto; /* Margen en pulgadas, centrado horizontalmente */
+}
+
+.box {
+    width: 10em; /* Ancho relativo al tamaño de letra del elemento */
+    height: 5em; /* Alto relativo al tamaño de letra del elemento */
+    font-size: 44pt; /* Tamaño de letra en puntos */
+    border: 1mm dashed blue; /* Borde en milímetros */
+}
+
+.estCeleste{
+    background-color: aqua;
+    font-size: 26px;
+    /*para que el texto este mas abajo*/
+    margin-bottom: 126px
+}
+
+.estAzul{
+    background-color: blue;
+    font-size: 24px;
+}
+
+#estRojo{
+    background-color: tomato;
+    font-size: 8px; 
+}
