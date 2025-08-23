@@ -1,78 +1,93 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
     <!-- Favicon -->
-    <link rel="icon" href="images/favIcon.jpg" type="image/png">
-
-
-    <meta charset="UTF-8">
-    <title>vavila page</title>
-    <!-- para invocar los estilos del archivo css -->
-    <link rel="stylesheet" href="estilo.css">
-</head>
-
-<body>
-    <!-- Cabecera -->
-    <h1 class="estCeleste">¡Verifica tu Sesion!</h1>
+    <link rel="icon" href="images/ronaldinho.jpg" type="image/png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DETOXNOW VAV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <body>
+    <!-- 1er Parrafo -->
+    <h1 class="text-center mt-3">Inicio de sesión</h1>
 
     
-        <!-- Formulario de correo -->
-    <form>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 my-3">
+      Verifica tu Sesión...
     </div>
-    <div class="mb-3">
+
+
+    <!-- Formulario de correo -->
+    <form class="container mb-5">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Direccion de correo</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">No compartas tu gmail.</div>
+      </div>
+      <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
+        <div id="emailHelp" class="form-text">Epic games nunca pedirá tu contraseña...</div>
+      </div>
+      <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <label class="form-check-label" for="exampleCheck1">Comprobar</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form> 
+    
+    
+    <style>
+      /* Scroll suave */
+      html {
+        scroll-behavior: smooth;
+      }
+
+
+      /* Opcional: dar estilo a los enlaces */
+      .col a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        padding: 15px;
+      }
+      .col a:hover {
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 8px;
+      }
+    </style>
+
+
+    <!-- Columnas con enlaces -->
+    <div class="container text-center mb-5">
+      <div class="row">
+        <div class="col"><a href="#productos">Productos</a></div>
+        <div class="col"><a href="#pago">Pago</a></div>
+        <div class="col"><a href="#nosotros">Sobre Nosotros</a></div>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    </form>  
 
 
-    <!-- class=nombreEstiloCss -->
-    <p class="estRojo">Crack:</p>
-    <p class="estAzul">Hola, sitio web activo:</p>
-    <!-- Aplicamos el box del archivo css -->
-    <div class="box">
-        <!-- para importar una Imagen en la carpta de Images -->
-        <img src="images/ronaldinho.jpg" alt="ronaldinho" width="200">
-        <div class="box">
-            <img src="images/perro.jpg" alt="ronaldinho" width="250">
-        <div class="container">
-        <img src="images/viejoak.jpg" alt="Ak" width="400">
-          
-  <script>
-    // Función para crear corazones
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerText = "❤️";
+    <!-- Secciones de destino -->
+    <div id="productos" class="container my-5 p-5 bg-secondary rounded">
+      <h2 class="text-center mt-3">Productos</h2>
+      <!-- para importar una Imagen en la carpta de Images -->
+      <img src="images/ronaldinho.jpg" alt="ronaldinho" width="200">
+      <!-- para importar una Imagen en la carpta de Images -->
+      <img src="images/detoxnow.jpg" alt="ronaldinho" width="200">       
+      <p>Aquí irán los productos disponibles...</p>
+    </div>
 
-      // Posición horizontal aleatoria
-      heart.style.left = Math.random() * 100 + "vw";
+    <div id="pago" class="container my-5 p-5 bg-success rounded">
+      <h2>Pago</h2>
+      <p>Aquí estará la información de métodos de pago...</p>
+    </div>
 
-      // Duración de la animación aleatoria
-      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+    <div id="nosotros" class="container my-5 p-5 bg-info rounded">
+      <h2>Sobre Nosotros</h2>
+      <p>Aquí podrás leer sobre la empresa y su historia...</p>
+    </div>
 
-      document.body.appendChild(heart);
-
-      // Eliminar corazón después de la animación
-      setTimeout(() => {
-        heart.remove();
-      }, 5000);
-    }
-
-    // Crear corazones cada 300 ms
-    setInterval(createHeart, 300);
-  </script>
-
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
