@@ -1,93 +1,152 @@
-<!doctype html>
-<html lang="en" data-bs-theme="dark">
-  <head>
-    <!-- Favicon -->
-    <link rel="icon" href="images/ronaldinho.jpg" type="image/png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DETOXNOW VAV</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <body>
-    <!-- 1er Parrafo -->
-    <h1 class="text-center mt-3">Inicio de sesión</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VidaSana - Desintoxicantes y Batidos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
 
-    
-    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 my-3">
-      Verifica tu Sesión...
-    </div>
-
-
-    <!-- Formulario de correo -->
-    <form class="container mb-5">
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Direccion de correo</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">No compartas tu gmail.</div>
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-        <div id="emailHelp" class="form-text">Epic games nunca pedirá tu contraseña...</div>
-      </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Comprobar</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form> 
-    
-    
-    <style>
-      /* Scroll suave */
-      html {
-        scroll-behavior: smooth;
-      }
-
-
-      /* Opcional: dar estilo a los enlaces */
-      .col a {
-        text-decoration: none;
-        color: inherit;
-        display: block;
-        padding: 15px;
-      }
-      .col a:hover {
-        background-color: rgba(255,255,255,0.1);
-        border-radius: 8px;
-      }
-    </style>
-
-
-    <!-- Columnas con enlaces -->
-    <div class="container text-center mb-5">
-      <div class="row">
-        <div class="col"><a href="#productos">Productos</a></div>
-        <div class="col"><a href="#pago">Pago</a></div>
-        <div class="col"><a href="#nosotros">Sobre Nosotros</a></div>
+  <!-- BARRA MENU -->
+  <nav class="navbar navbar-dark bg-success">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <a class="navbar-brand fw-bold" href="#">DetoxNow</a>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-light">😁🛒 Carrito</button>
+        <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">☰</button>
       </div>
     </div>
+  </nav>
 
-
-    <!-- Secciones de destino -->
-    <div id="productos" class="container my-5 p-5 bg-secondary rounded">
-      <h2 class="text-center mt-3">Productos</h2>
-      <!-- para importar una Imagen en la carpta de Images -->
-      <img src="images/ronaldinho.jpg" alt="ronaldinho" width="200">
-      <!-- para importar una Imagen en la carpta de Images -->
-      <img src="images/detoxnow.jpg" alt="ronaldinho" width="200">       
-      <p>Aquí irán los productos disponibles...</p>
+  <div class="offcanvas offcanvas-start bg-success text-white" tabindex="-1" id="sidebarMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
     </div>
-
-    <div id="pago" class="container my-5 p-5 bg-success rounded">
-      <h2>Pago</h2>
-      <p>Aquí estará la información de métodos de pago...</p>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-white" href="#productos">Productos</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#pago">Pago</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#empresa">Sobre nosotros</a></li>
+      </ul>
     </div>
+  </div>
 
-    <div id="nosotros" class="container my-5 p-5 bg-info rounded">
-      <h2>Sobre Nosotros</h2>
-      <p>Aquí podrás leer sobre la empresa y su historia...</p>
+  <!-- SLIDE PRINCIPAL -->
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/batidos.jpg" class="d-block w-100" alt="Batidos">
+      </div>
+      <div class="carousel-item">
+        <img src="images/ronaldinho.jpg" class="d-block w-100" alt="Desintoxicantes">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Vida Sana">
+      </div>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <!-- HEADER -->
+  <header class="hero text-white text-center d-flex align-items-center bg-success" style="height: 200px;">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Bienvenido a DetoxNow (Vicente)</h1>
+      <p class="lead">Tus desintoxicantes y batidos congelados favoritos para una vida saludable</p>
+      <a href="#productos" class="btn btn-light btn-lg mt-3">Ver Productos</a>
+    </div>
+  </header>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Nuestros Productos</h2>
+      <div class="row g-4">
+
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="card shadow-lg h-100">
+            <a href="#pago" class="btn btn-outline-success">Comprar</a>
+            <img src="images/batidoverde.webp" class="card-img-top" alt="Batido Verde">
+            <div class="card-body">
+              <h5 class="card-title">Batido Verde Detox</h5>
+              <p class="card-text">Mezcla fresca de espinaca, pepino y manzana para limpiar tu organismo.</p>
+              <p class="text-success fw-bold">$4.500</p>
+              <a href="#pago" class="btn btn-outline-success">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="card shadow-lg h-100">
+            <img src="images/LimonJengibre.webp" class="card-img-top" alt="Desintoxicante">
+            <div class="card-body">
+              <h5 class="card-title">Desintoxicante de Jengibre y Limón</h5>
+              <p class="card-text">Potente mezcla para eliminar toxinas y mejorar tu digestión.</p>
+              <p class="text-success fw-bold">$3.800</p>
+              <a href="#pago" class="btn btn-outline-success">Comprar</a>
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="card shadow-lg h-100">
+            <img src="images/batidoFrutosRojo.webp" class="card-img-top" alt="Batido de frutos rojos">
+            <div class="card-body">
+              <h5 class="card-title">Batido de Frutos Rojos Congelado</h5>
+              <p class="card-text">Delicioso y nutritivo, lleno de antioxidantes naturales.</p>
+              <p class="text-success fw-bold">$5.000</p>
+              <a href="#pago" class="btn btn-outline-success">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAS DE PAGO -->
+  <section id="pago" class="bg-light py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Metodos de Pago</h2>
+      <p>Se aceptan las siguientes formas de pago:</p>
+      <div class="d-flex justify-content-center gap-4 flex-wrap">
+        <img src="https://img.icons8.com/color/96/visa.png" alt="Visa" />
+        <img src="https://img.icons8.com/color/96/mastercard.png" alt="MasterCard" />
+        <img src="https://img.icons8.com/color/96/paypal.png" alt="PayPal" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE LA EMPRESA -->
+  <section id="empresa" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Sobre DetoxNow</h2>
+      <p class="lead text-center">
+        DetoxNow es una empresa dedicada a ofrecer productos naturales para desintoxicar tu cuerpo y batidos congelados de alta calidad. 
+        Nuestra misión es ayudarte a vivir una vida más saludable y llena de energía con ingredientes frescos y naturales.
+      </p>
+    </div>
+  </section>
+
+  <footer class="bg-success text-white text-center py-3">
+    <p class="mb-0">&copy; DetoxNow - 2025</p>
+  </footer>
+  <!-- ACTIVIDAD 1 DE JAVASCRIPT INICIO -->
+  <div>
+  <label for="edadInput">Ingrese su edad:</label>
+  <input type="number" id="edadInput" min="0" max="120" />
+  <button id="botonEdad">Enviar</button>
+  </div>
+  <!-- ACTIVIDAD 1 DE JAVASCRIPT FIN -->
+
+  <p id="mensajeEdad" style="font-weight: bold; margin-top: 10px;"></p>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
