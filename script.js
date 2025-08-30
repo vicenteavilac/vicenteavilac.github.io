@@ -43,4 +43,40 @@ document.getElementById("botonEdad").addEventListener("click", function() {
     mensajeEdad.style.color = "blue";
 
   }
+  const form = document.getElementById('usuarioForm');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Construir el objeto usuario según modelo
+  const usuario = {
+    rut: form.rut.value,
+    nombre: form.nombre.value,
+    apellido: form.apellido.value,
+    email: form.email.value,
+    telefono: parseInt(form.telefono.value),
+    direccion: form.direccion.value,
+    fechaNacimiento: form.fechaNacimiento.value,  // yyyy-mm-dd
+    rolUsuario: form.rolUsuario.value
+  };
+
+  fetch('http://localhost:8082/api/v1/usuarios', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(usuario)
+  })
+  .then(response => {
+    if(response.ok){
+      alert('Usuario creado exitosamente!');
+      form.reset();
+    } else {
+      alert('Error al crear usuario');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Error al conectar con el servidor');
+    });
+  });
+
 });
