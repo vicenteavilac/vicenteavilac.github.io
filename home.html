@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <link rel="stylesheet" href="assets/style.css" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GUAU&MIAU</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <title>Bati-Duoc</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
 
-  <!-- BARRA MENU -->
-  <nav class="navbar navbar-dark bg-success">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-      <a class="navbar-brand fw-bold" href="#">GUAU&MIAU</a>
-      
-      <div class="d-flex gap-2">
-        <button class="btn btn-outline-light">😁🛒 Carrito</button>
-        <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">☰</button>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bati-Duoc</a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
-
-  <div class="offcanvas offcanvas-start bg-success text-white" tabindex="-1" id="sidebarMenu">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title">Menú</h5>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link text-white" href="#productos">Productos</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#pago">Registro</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#pago">Iniciar Sesion</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#pago">Blog</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#pago">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#empresa">Sobre nosotros</a></li>
-      </ul>
-    </div>
-  </div>
 
   <!-- SLIDE PRINCIPAL -->
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -44,11 +39,10 @@
       <div class="carousel-item active">
         <img src="images/batidos.jpg" class="d-block w-100" alt="Batidos">
       </div>
+
       <div class="carousel-item">
-        <img src="images/ronaldinho.jpg" class="d-block w-100" alt="Desintoxicantes">
-      </div>
-      <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Vida Sana">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+          class="d-block w-100" alt="Vida Sana">
       </div>
     </div>
   </div>
@@ -90,7 +84,7 @@
               <p class="card-text">Potente mezcla para eliminar toxinas y mejorar tu digestión.</p>
               <p class="text-success fw-bold">$3.800</p>
               <a href="#pago" class="btn btn-outline-success">Comprar</a>
-              
+
             </div>
           </div>
         </div>
@@ -125,47 +119,12 @@
     </div>
   </section>
 
-  <!-- SOBRE LA EMPRESA -->
-  <section id="empresa" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Sobre DetoxNow</h2>
-      <p class="lead text-center">
-        DetoxNow es una empresa dedicada a ofrecer productos naturales para desintoxicar tu cuerpo y batidos congelados de alta calidad. 
-        Nuestra misión es ayudarte a vivir una vida más saludable y llena de energía con ingredientes frescos y naturales.
-      </p>
-    </div>
-  </section>
+
 
   <footer class="bg-success text-white text-center py-3">
     <p class="mb-0">&copy; DetoxNow - 2025</p>
   </footer>
 
-  <!-- ACTIVIDAD 1 DE JAVASCRIPT INICIO -->
-  <div>
-  <label for="edadInput">Ingrese su edad:</label>
-  <input type="number" id="edadInput" min="0" max="120" />
-  <button id="botonEdad">Enviar</button>
-  </div>
-  <!-- ACTIVIDAD 1 DE JAVASCRIPT FIN -->
-
-  
-  <!-- ACTIVIDAD 29/08 DE Enviar Formulario a repositorio antiguo -->
-  <div id="myForm">
-    <h2>Formulario de Contacto</h2>
-    <form action="http://localhost:8082/api/v1/usuarios" method="get">
-        <!-- <form> -->
-        <label>ID:<input id="id" name="id"></label>        
-        <form id="usuarioForm">   
-    <button onclick="showAlert()">Click Me</button>
-  </div>
-  <!-- ACTIVIDAD 29/08 DE Enviar Formulario a repositorio antiguo -->
-   
-
-
-
-  <p id="mensajeEdad" style="font-weight: bold; margin-top: 10px;"></p>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
 </body>
+
 </html>
