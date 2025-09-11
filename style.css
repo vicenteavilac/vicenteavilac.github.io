@@ -1,0 +1,93 @@
+/* styles.css */
+
+/* Header */
+header .bg-dark {
+  background-color: #222;
+}
+
+/* Navegación */
+nav ul.nav li.nav-item a.nav-link {
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul.nav li.nav-item a.nav-link:hover {
+  color: #007bff;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Producto */
+.product-name {
+  font-weight: 700;
+}
+
+.product-price {
+  color: #333;
+}
+
+.product-description {
+  text-align: justify;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Selección de cantidad */
+form label.form-label {
+  font-weight: 600;
+}
+
+/* Miniaturas */
+.thumbnail.selected {
+  border-color: #007bff !important;
+  box-shadow: 0 0 5px #007bff;
+}
+
+/* Related products */
+.related-products h6 {
+  font-weight: 600;
+  color: #333;
+}
+
+.related-item {
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+/* Scroll horizontal para related products */
+.related-products .d-flex {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* Scrollbar simple para related products */
+.related-products .d-flex::-webkit-scrollbar {
+  height: 6px;
+}
+
+.related-products .d-flex::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+/* Responsive adjustments si quieres */
+@media (max-width: 767px) {
+  .product-description {
+    font-size: 0.85rem;
+  }
+}
