@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Producto</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="bg-light border-bottom py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-2">
+        <div class="bg-dark" style="width:20px; height:20px;"></div>
+        <span class="fw-bold">Bati-Duoc</span>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Productos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Nosotros</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Blogs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Co ntacto</a></li>
+        </ul>
+      </nav>
+      <div class="d-flex align-items-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+          <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 5H14.5a.5.5 0 0 1 .49.598l-1.5 7A.5.5 0 0 1 13 13H4a.5.5 0 0 1-.491-.408L1.01 2H.5a.5.5 0 0 1-.5-.5zM5 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+        </svg>
+        <span>Cart (0)</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <nav class="mb-3" aria-label="breadcrumb">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Batidos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Frutos Rojos</li>
+      </ol>
+    </nav>
+
+    <div class="row">
+      <div class="col-md-7">
+        <div class="product-images border p-2">
+          <img src="images/batidoFrutosRojo.webp" class="d-block w-100" alt="batidoFrutosRojo">  
+          <div class="thumbnail-images d-flex gap-2">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="product-info">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="product-name">Batido de Frutos Rojos</h2>
+            <span class="product-price fs-4 fw-bold">$2.990</span>
+          </div>
+          <hr />
+          <p class="product-description small text-justify">
+            Las manzanas son una fruta deliciosa y versátil, apreciada en todo el mundo por su sabor refrescante y sus numerosos beneficios para la salud. Disponibles en una variedad de colores, desde el rojo vibrante hasta el verde brillante y el amarillo dorado, las manzanas son una opción perfecta para cualquier ocasión, ya sea como un refrigerio saludable.
+          </p>
+          <form class="mt-4">
+            <label for="cantidad" class="form-label small">Cantidad</label>
+            <select id="cantidad" class="form-select w-auto mb-3">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            <button type="submit" class="btn btn-primary w-100">Añadir al carrito</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4" />
+
+  <section class="related-products">
+    <h6 class="mb-3">Batidos Relacionados</h6>
+    <div class="d-flex gap-3 overflow-auto">
+      <a href="#" class="related-item" data-product-id="1">
+        <img src="images/batidoverde.webp" alt="Batido Verde" class="img-fluid">
+      </a>
+      <a href="#" class="related-item" data-product-id="2">
+        <img src="images/LimonJengibre.webp" alt="Batido de Limon LimonJengibre" class="img-fluid">
+      </a>
+      <a href="#" class="related-item" data-product-id="3">
+        <img src="images/perropresidente.jpeg" alt="Batido de perro" class="img-fluid">
+      </a>
+      <a href="#" class="related-item" data-product-id="4">
+        <img src="images/batido4.webp" alt="Batido de Vainilla" class="img-fluid">
+      </a>
+      <a href="#" class="related-item" data-product-id="5">
+        <img src="images/batido5.webp" alt="Batido de Mango" class="img-fluid">
+      </a>
+    </div>
+  </section>
+  </main>
+
+  <!-- Bootstrap 5 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Tu JS personalizado -->
+  <script src="productos.js"></script>
+</body>
+</html>
