@@ -2,199 +2,225 @@
 <html lang="es">
 
 <head>
-  <link rel="stylesheet" href="assets/style.css" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GUAU&MIAU</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/style.css" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Bati-Duoc</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- NAVBAR estilo wireframe -->
-  <nav class="navbar navbar-expand-lg bg-light border-bottom">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#">Bati-Duoc</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-        </ul>
-        <div class="d-flex">
-          <a class="nav-link" href="index2.html">Iniciar sesión</a>
-          <a class="nav-link" href="index3.html">Registrar usuario</a>
-          <a class="nav-link position-relative" href="#">
-            <i class="bi bi-cart"></i> Cart (0)
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
+	<!-- NAVBAR estilo wireframe -->
+	<nav class="navbar navbar-expand-lg bg-light border-bottom">
+		<div class="container-fluid">
+			<a class="navbar-brand fw-bold" href="#">Bati-Duoc</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+				</ul>
+				<div class="d-flex">
+					<div class="nav-item dropdown me-3">
+						<a class="nav-link" href="index2.html">Iniciar sesión</a>
+					</div>
 
-  <!-- SLIDE PRINCIPAL (NO MODIFICAR) -->
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="images/batidos.jpg" class="d-block w-100" alt="Batidos">
-      </div>
-      <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
-          class="d-block w-100" alt="Vida Sana">
-      </div>
-    </div>
-  </div>
+					<div class="nav-item dropdown me-3">
+						<a class="nav-link" href="index3.html">Registrar usuario</a>
+					</div>
+					<div class="nav-item dropdown me-3">
+						<a class="nav-link position-relative" href="#">
+							<i class="bi bi-cart"></i> Cart (0)
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
 
-  <!-- HERO / TIENDA ONLINE -->
-  <section class="bg-light py-4 border my-4">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <h2 class="fw-bold mb-3">TIENDA ONLINE</h2>
-          <p class="mb-4">Nuestros productos saludables para tu bienestar. Descubre batidos y desintoxicantes naturales.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+	<!-- SLIDE PRINCIPAL (NO MODIFICAR) -->
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="images/batidos.jpg" class="d-block w-100" alt="Batidos">
+			</div>
+			<div class="carousel-item">
+				<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+					class="d-block w-100" alt="Vida Sana">
+			</div>
+		</div>
+	</div>
 
-  <!-- PRODUCTOS (BASE) -->
-  <section id="productos" class="py-5">
-    <div class="container">
-      <div class="row g-4">
+	<!-- HERO / TIENDA ONLINE -->
+	<section class="bg-light py-4 border my-4">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<h2 class="fw-bold mb-3">TIENDA ONLINE</h2>
+					<p class="mb-4">Nuestros productos saludables para tu bienestar. Descubre batidos y desintoxicantes
+						naturales.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-        <div class="col-md-3">
-          <div class="card h-100">
-            <div class="bg-light" style="height:120px;display:flex;align-items:center;justify-content:center;">
-              <span>[Imagen]</span>
-            </div>
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
+	<!-- PRODUCTOS (BASE) -->
+	<section id="productos" class="py-5">
+		<div class="container">
+			<div class="row g-4">
 
-        <div class="col-md-3">
-          <div class="card h-100">
-            <div class="bg-light" style="height:120px;display:flex;align-items:center;justify-content:center;">
-              <span>[Imagen]</span>
-            </div>
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <div class="bg-light" style="height:120px;display:flex;align-items:center;justify-content:center;">
-              <span>[Imagen]</span>
-            </div>
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <div class="bg-light" style="height:120px;display:flex;align-items:center;justify-content:center;">
-              <span>[Imagen]</span>
-            </div>
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <div class="bg-light" style="height:120px;display:flex;align-items:center;justify-content:center;">
-              <span>[Imagen]</span></div>
-            <div class="card-body text-center"><a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <div class="bg-light" style="height:120px;display:flex;align-items:center;justify-content:center;">
-              <span>[Imagen]</span></div>
-            <div class="card-body text-center"><a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <div class="bg-light" style="height:120px;display:flex;align-items:center;justify-content:center;">
-              <span>[Imagen]</span></div>
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <div class="bg-light" style="height:120px;display:flex;align-items:center;justify-content:center;">
-              <span>[Imagen]</span></div>
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<div class="bg-light"
+							style="height:120px;display:flex;align-items:center;justify-content:center;">
+							<span>[Imagen]</span>
+						</div>
+						<div class="card-body text-center">
+							<a href="#" class="text-primary d-block mb-1">Product Title</a>
+							<div class="mb-1">Atributos</div>
+							<div class="fw-bold mb-2">$00.00</div>
+							<a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+						</div>
+					</div>
+				</div>
 
-      </div>
-    </div>
-  </section>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<div class="bg-light"
+							style="height:120px;display:flex;align-items:center;justify-content:center;">
+							<span>[Imagen]</span>
+						</div>
+						<div class="card-body text-center">
+							<a href="#" class="text-primary d-block mb-1">Product Title</a>
+							<div class="mb-1">Atributos</div>
+							<div class="fw-bold mb-2">$00.00</div>
+							<a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<div class="bg-light"
+							style="height:120px;display:flex;align-items:center;justify-content:center;">
+							<span>[Imagen]</span>
+						</div>
+						<div class="card-body text-center">
+							<a href="#" class="text-primary d-block mb-1">Product Title</a>
+							<div class="mb-1">Atributos</div>
+							<div class="fw-bold mb-2">$00.00</div>
+							<a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<div class="bg-light"
+							style="height:120px;display:flex;align-items:center;justify-content:center;">
+							<span>[Imagen]</span>
+						</div>
+						<div class="card-body text-center">
+							<a href="#" class="text-primary d-block mb-1">Product Title</a>
+							<div class="mb-1">Atributos</div>
+							<div class="fw-bold mb-2">$00.00</div>
+							<a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<div class="bg-light"
+							style="height:120px;display:flex;align-items:center;justify-content:center;">
+							<span>[Imagen]</span>
+						</div>
+						<div class="card-body text-center"><a href="#" class="text-primary d-block mb-1">Product
+								Title</a>
+							<div class="mb-1">Atributos</div>
+							<div class="fw-bold mb-2">$00.00</div>
+							<a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<div class="bg-light"
+							style="height:120px;display:flex;align-items:center;justify-content:center;">
+							<span>[Imagen]</span>
+						</div>
+						<div class="card-body text-center"><a href="#" class="text-primary d-block mb-1">Product
+								Title</a>
+							<div class="mb-1">Atributos</div>
+							<div class="fw-bold mb-2">$00.00</div>
+							<a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<div class="bg-light"
+							style="height:120px;display:flex;align-items:center;justify-content:center;">
+							<span>[Imagen]</span>
+						</div>
+						<div class="card-body text-center">
+							<a href="#" class="text-primary d-block mb-1">Product Title</a>
+							<div class="mb-1">Atributos</div>
+							<div class="fw-bold mb-2">$00.00</div>
+							<a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<div class="bg-light"
+							style="height:120px;display:flex;align-items:center;justify-content:center;">
+							<span>[Imagen]</span>
+						</div>
+						<div class="card-body text-center">
+							<a href="#" class="text-primary d-block mb-1">Product Title</a>
+							<div class="mb-1">Atributos</div>
+							<div class="fw-bold mb-2">$00.00</div>
+							<a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+						</div>
+					</div>
+				</div>
 
-  <!-- FOOTER BASE -->
-  <footer class="bg-light border-top py-4 mt-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-4 mb-2 mb-md-0">
-          <span class="fw-bold">Bati-Duoc</span>
-        </div>
-        <div class="col-md-4 mb-2 mb-md-0 text-center">
-          <img src="https://img.icons8.com/color/96/visa.png" alt="Visa" style="width:40px; height:auto;" />
-          <img src="https://img.icons8.com/color/96/mastercard.png" alt="MasterCard" style="width:40px; height:auto;" />
-          <img src="https://img.icons8.com/color/96/paypal.png" alt="PayPal" style="width:40px; height:auto;" />
-        </div>
-        <div class="col-md-4 text-end">
-          <form class="d-flex justify-content-end">
-            <input type="email" class="form-control form-control-sm w-auto me-2" placeholder="Enter Email">
-            <button class="btn btn-dark btn-sm">Suscribirse</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <section class="bg-light py-4 border-top">
-    <div class="container text-center">
-      <p class="mb-1">&copy; 2024 Bati-Duoc. Todos los derechos reservados.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- FOOTER BASE -->
+	<footer class="bg-light border-top py-4 mt-5">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-4 mb-2 mb-md-0">
+					<span class="fw-bold">Bati-Duoc</span>
+				</div>
+				<div class="col-md-4 mb-2 mb-md-0 text-center">
+					<img src="https://img.icons8.com/color/96/visa.png" alt="Visa" style="width:40px; height:auto;" />
+					<img src="https://img.icons8.com/color/96/mastercard.png" alt="MasterCard"
+						style="width:40px; height:auto;" />
+					<img src="https://img.icons8.com/color/96/paypal.png" alt="PayPal"
+						style="width:40px; height:auto;" />
+				</div>
+				<div class="col-md-4 text-end">
+					<form class="d-flex justify-content-end">
+						<input type="email" class="form-control form-control-sm w-auto me-2" placeholder="Enter Email">
+						<button class="btn btn-dark btn-sm">Suscribirse</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<section class="bg-light py-4 border-top">
+		<div class="container text-center">
+			<p class="mb-1">&copy; 2024 Bati-Duoc. Todos los derechos reservados.</p>
 </body>
 
 </html>
