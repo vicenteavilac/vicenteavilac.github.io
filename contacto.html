@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bati-Duoc | Contacto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-light border-bottom">
+    <div class="container-fluid">
+      <a class="nav-link fw-bold" href="index.html">Bati-Duoc</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="productoPag.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="d-flex">
+          <div class="nav-item dropdown me-3">
+            <a class="nav-link" href="index2.html">Iniciar sesión</a>
+          </div>
+          <div class="nav-item dropdown me-3">
+            <a class="nav-link" href="index3.html">Registrar usuario</a>
+          </div>
+          <div class="nav-item dropdown me-3">
+            <a class="nav-link position-relative" href="#">
+              <i class="bi bi-cart"></i> Cart (0)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SECCIÓN CONTACTO -->
+  <main class="container my-5">
+    <h2 class="fw-bold text-center mb-4">Contáctanos</h2>
+    <div class="row">
+      <!-- Formulario -->
+      <div class="col-md-6 mb-4">
+        <form>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" placeholder="tuemail@ejemplo.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="asunto" class="form-label">Asunto</label>
+            <input type="text" class="form-control" id="asunto" placeholder="Motivo del contacto" required>
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+        </form>
+      </div>
+
+      <!-- Información de contacto -->
+      <div class="col-md-6">
+        <h5 class="fw-bold mb-3">Información</h5>
+        <p><strong>Dirección:</strong> Av. Siempre Viva 123, Santiago, Chile</p>
+        <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
+        <p><strong>Email:</strong> contacto@bati-duoc.cl</p>
+        <hr>
+        <h5 class="fw-bold mb-3">Redes Sociales</h5>
+        <p>
+          <a href="#" class="me-3">🌐 Facebook</a>
+          <a href="#" class="me-3">📸 Instagram</a>
+          <a href="#">🐦 Twitter</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-light border-top py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-1">&copy; 2024 Bati-Duoc. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

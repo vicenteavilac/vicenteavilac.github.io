@@ -11,39 +11,40 @@
 </head>
 
 <body>
-  <!-- NAVBAR estilo wireframe -->
-    <nav class="navbar navbar-expand-lg bg-light border-bottom">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#">Bati-Duoc</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                </ul>
-                <div class="d-flex">
-                    <div class="nav-item dropdown me-3">
-                        <a class="nav-link" href="index2.html">Iniciar sesión</a>
-                    </div>
-                    <div class="nav-item dropdown me-3">
-                        <a class="nav-link active" href="index3.html">Registrar usuario</a>
-                    </div>
-                    <div class="nav-item dropdown me-3">
-                        <a class="nav-link position-relative" href="#">
-                            <i class="bi bi-cart"></i> Cart (0)
-                        </a>
-                    </div>
-                </div>
-            </div>
+ <!-- NAVBAR estilo wireframe -->
+<nav class="navbar navbar-expand-lg bg-light border-bottom">
+  <div class="container-fluid">
+    <a class="nav-link" href="index.html">Bati-Duoc </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="productoPag.html">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="d-flex">
+        <div class="nav-item dropdown me-3">
+          <a class="nav-link" href="index2.html">Iniciar sesión</a>
         </div>
-    </nav>
+        <div class="nav-item dropdown me-3">
+          <a class="nav-link active" href="index3.html">Registrar usuario</a>
+        </div>
+        <div class="nav-item dropdown me-3">
+          <a class="nav-link position-relative" href="#">
+            <i class="bi bi-cart"></i> Cart (0)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
 
 	<!-- SLIDE PRINCIPAL (NO MODIFICAR) -->
 	<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -71,105 +72,142 @@
 			</div>
 		</div>
 	</section>
+<section id="productos" class="py-5">
+  <div class="container">
+    <div class="row g-4">
 
-	<!-- PRODUCTOS (BASE) -->
-	<section id="productos" class="py-5">
-		<div class="container">
-			<div class="row g-4">
+      <!-- Batipalta -->
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/Imagenes_Batidos/Avocado smoothie.png" class="card-img-top" alt="Avocado smoothie">
+          <div class="card-body text-center">
+            <a href="#" class="text-primary d-block mb-1">Batipalta</a>
+            <div class="mb-1">
+              Atributos: Suave, cremoso y tropical. Una mezcla refrescante de aguacate, kiwi, mango y naranja.
+              Perfecto para quienes buscan energía y un sabor exótico en cada sorbo.
+            </div>
+            <div class="fw-bold mb-2">$8.000</div>
+            <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+          </div>
+        </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="card h-100">
-             <img src="images/Imagenes_Batidos/Avocado smoothie.png" class="card-img-top" alt="Avocado smoothie">
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Batipalta</a>
-              <div class="mb-1">Atributos: Suave, cremoso y tropical. Una mezcla refrescante de aguacate, kiwi, mango y naranja. Perfecto para quienes buscan energía y un sabor exótico en cada sorbo.
-             
-              </div>
-              <div class="fw-bold mb-2">$8.000</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+      <!-- BatiBanana -->
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img class="img-fluid" src="images/Imagenes_Batidos/Banana smoothie with peanut butter.png">
+          <div class="card-body text-center">
+            <a href="#" class="text-primary d-block mb-1">BatiBanana</a>
+            <div class="mb-1">
+              Atributos: Dulce, cremoso e irresistible. Solo tres ingredientes: plátano, mantequilla de maní y leche.
+              Energía y sabor intenso en cada sorbo. ¡Un clásico que no falla!
             </div>
+            <div class="fw-bold mb-2">$7.000</div>
+            <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
           </div>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="card h-100">
-                <img class = "img-fluid"src="images/Imagenes_Batidos/Banana smoothie with peanut butter.png" >
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">BatiBanana</a>
-              <div class="mb-1">Atributos: Dulce, cremoso e irresistible. Solo tres ingredientes: plátano, mantequilla de maní y leche. Energía y sabor intenso en cada sorbo. ¡Un clásico que no falla!</div>
-              <div class="fw-bold mb-2">$7.000</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+      <!-- BatiBerry -->
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img class="img-fluid" src="images/Imagenes_Batidos/Berry smoothie.png">
+          <div class="card-body text-center">
+            <a href="#" class="text-primary d-block mb-1">BatiBerry</a>
+            <div class="mb-1">
+              Atributos: Colorido, fresco y lleno de sabor. Una mezcla perfecta de frutos rojos, naranja y un toque
+              dulce. Ideal para refrescar y sorprender en cualquier ocasión.
             </div>
+            <div class="fw-bold mb-2">$8.000</div>
+            <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img class = "img-fluid"src="images/Imagenes_Batidos/Berry smoothie.png" >
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">BatiBerry</a>
-              <div class="mb-1">Atributos: Colorido, fresco y lleno de sabor. Una mezcla perfecta de frutos rojos, naranja y un toque dulce. Ideal para refrescar y sorprender en cualquier ocasión.</div>
-              <div class="fw-bold mb-2">$8.000</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="images/Imagenes_Batidos/Kale smoothie.png" >
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Baticol</a>
-              <div class="mb-1">Atributos: Verde, fresco y nutritivo. Una mezcla de kale, manzana, aguacate y lima que combina dulzor y acidez. Energía natural y sabor vibrante para comenzar tu día.</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-         <img src="images/Imagenes_Batidos/Kiwi fruit smoothie.png" >
-            <div class="card-body text-center"><a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-              <img src="images/Imagenes_Batidos/Pineapple and mango smoothie.png" >
-            <div class="card-body text-center"><a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-                     <img src="images/Imagenes_Batidos/Protein smoothie.png" >
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-              <img src="images/Imagenes_Batidos/Spinach smoothie.png" >
-            <div class="card-body text-center">
-              <a href="#" class="text-primary d-block mb-1">Product Title</a>
-              <div class="mb-1">Atributos</div>
-              <div class="fw-bold mb-2">$00.00</div>
-              <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
-            </div>
-          </div>
-        </div>
+      </div>
 
-			</div>
-		</div>
-	</section>
+      <!-- Baticol -->
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/Imagenes_Batidos/Kale smoothie.png">
+          <div class="card-body text-center">
+            <a href="#" class="text-primary d-block mb-1">Baticol</a>
+            <div class="mb-1">
+              Atributos: Verde, fresco y nutritivo. Una mezcla de kale, manzana, aguacate y lima que combina dulzor y
+              acidez. Energía natural y sabor vibrante para comenzar tu día.
+            </div>
+            <div class="fw-bold mb-2">$9.000</div>
+            <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BatiKiwi -->
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/Imagenes_Batidos/Kiwi fruit smoothie.png">
+          <div class="card-body text-center">
+            <a href="#" class="text-primary d-block mb-1">BatiKiwi</a>
+            <div class="mb-1">
+              Atributos: Refrescante y ligero. Una explosión de kiwi con un toque cítrico, perfecto para hidratar y
+              revitalizar en cualquier momento del día.
+            </div>
+            <div class="fw-bold mb-2">$7.500</div>
+            <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BatiPiñaMango -->
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/Imagenes_Batidos/Pineapple and mango smoothie.png">
+          <div class="card-body text-center">
+            <a href="#" class="text-primary d-block mb-1">BatiPiñaMango</a>
+            <div class="mb-1">
+              Atributos: Tropical y dulce. Una mezcla jugosa de piña madura y mango fresco que te transporta directo al
+              verano en cada sorbo.
+            </div>
+            <div class="fw-bold mb-2">$9.500</div>
+            <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BatiProteína -->
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/Imagenes_Batidos/Protein smoothie.png">
+          <div class="card-body text-center">
+            <a href="#" class="text-primary d-block mb-1">BatiProteína</a>
+            <div class="mb-1">
+              Atributos: Potente y nutritivo. Con proteína natural, plátano y avena para quienes buscan energía
+              sostenida después del entrenamiento.
+            </div>
+            <div class="fw-bold mb-2">$10.000</div>
+            <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BatiSpinach -->
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="images/Imagenes_Batidos/Spinach smoothie.png">
+          <div class="card-body text-center">
+            <a href="#" class="text-primary d-block mb-1">BatiSpinach</a>
+            <div class="mb-1">
+              Atributos: Saludable y refrescante. Una combinación de espinaca, manzana verde y pepino que aporta
+              frescura y vitalidad de manera natural.
+            </div>
+            <div class="fw-bold mb-2">$8.500</div>
+            <a href="#" class="btn btn-outline-dark btn-sm">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 	<!-- FOOTER BASE -->
 	<footer class="bg-light border-top py-4 mt-5">
@@ -201,3 +239,4 @@
 	</section>
 </body>
 </html>
+
