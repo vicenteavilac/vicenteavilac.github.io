@@ -1,64 +1,144 @@
-// Objeto que almacena los datos de cada producto
-const products = { // <-- Se cambió "productos" a "products" aquí
-    '1': {
-        name: 'Batido Verde',
-        price: '$3.990',
-        image: 'images/batidoverde.webp',
-        description: 'Un batido refrescante y lleno de energía con espinaca, manzana verde y kiwi. Perfecto para empezar el día.'
-    },
-    '2': {
-        name: 'Batido de Limón y Jengibre',
-        price: '$2.990',
-        image: 'images/LimonJengibre.webp',
-        description: 'Una mezcla revitalizante de limón y jengibre, ideal para una digestión saludable y un impulso natural.'
-    },
-    '3': {
-        name: 'Batido "Perro Presidente"',
-        price: '$4.500',
-        image: 'images/perropresidente.jpeg',
-        description: 'La famosa receta secreta de "Perro Presidente" con plátano, avena y un toque de canela. ¡Espectacular!'
-    },
-    '4': {
-        name: 'Batido de Vainilla',
-        price: '$2.500',
-        image: 'images/batido4.webp',
-        description: 'Suave y cremoso batido de vainilla, perfecto para una tarde de relajo. Puedes añadirle tu topping favorito.'
-    },
-    '5': {
-        name: 'Batido de Mango',
-        price: '$3.200',
-        image: 'images/batido5.webp',
-        description: 'Un batido tropical de mango dulce y jugoso, ideal para refrescarse en días de calor.'
-    }
-};
-
-// Función para actualizar el contenido principal de la página
-function updatePageContent(productId) {
-    const product = products[productId]; // <-- Y aquí también, para que coincida
-    if (!product) {
-        console.error('Producto no encontrado para el ID:', productId);
-        return;
-    }
-
-    // Actualiza los elementos con los datos del producto
-    document.querySelector('.product-name').textContent = product.name;
-    document.querySelector('.product-price').textContent = product.price;
-    document.querySelector('.product-description').textContent = product.description;
-
-    const mainImage = document.querySelector('.product-images img');
-    mainImage.src = product.image;
-    mainImage.alt = product.name;
-}
-
-// Escucha los clics en los enlaces de productos relacionados
 document.addEventListener('DOMContentLoaded', () => {
-    const relatedItems = document.querySelectorAll('.related-item');
 
+    // 1. Datos de los productos
+    const products = {
+        'avocado': {
+            name: 'Batido de Palta',
+            price: 8000,
+            description: 'Suave, cremoso y tropical. Una mezcla refrescante de aguacate, kiwi, mango y naranja. Perfecto para quienes buscan energía y un sabor exótico en cada sorbo.',
+            image: 'images/Imagenes_Batidos/Avocado smoothie.png'
+        },
+        'banana-peanut': {
+            name: 'Batido de Plátano y Maní',
+            price: 7000,
+            description: 'Dulce, cremoso e irresistible. Solo tres ingredientes: plátano, mantequilla de maní y leche. Energía y sabor intenso en cada sorbo. ¡Un clásico que no falla!',
+            image: 'images/Imagenes_Batidos/Banana smoothie with peanut butter.png'
+        },
+        'berry': {
+            name: 'Batido de Frutos Rojos',
+            price: 8000,
+            description: 'Colorido, fresco y lleno de sabor. Una mezcla perfecta de frutos rojos, naranja y un toque dulce. Ideal para refrescar y sorprender en cualquier ocasión.',
+            image: 'images/Imagenes_Batidos/Berry smoothie.png'
+        },
+        'kale': {
+            name: 'Batido de Col Rizada',
+            price: 9000,
+            description: 'Verde, fresco y nutritivo. Una mezcla de kale, manzana, aguacate y lima que combina dulzor y acidez. Energía natural y sabor vibrante para comenzar tu día.',
+            image: 'images/Imagenes_Batidos/Kale smoothie.png'
+        },
+        'kiwi': {
+            name: 'Batido de Kiwi',
+            price: 7500,
+            description: 'Refrescante y ligero. Una explosión de kiwi con un toque cítrico, perfecto para hidratar y revitalizar en cualquier momento del día.',
+            image: 'images/Imagenes_Batidos/Kiwi fruit smoothie.png'
+        },
+        'pineapple-mango': {
+            name: 'Batido de Piña y Mango',
+            price: 9500,
+            description: 'Tropical y dulce. Una mezcla jugosa de piña madura y mango fresco que te transporta directo al verano en cada sorbo.',
+            image: 'images/Imagenes_Batidos/Pineapple and mango smoothie.png'
+        },
+        'protein': {
+            name: 'Batido de Proteína',
+            price: 10000,
+            description: 'Potente y nutritivo. Con proteína natural, plátano y avena para quienes buscan energía sostenida después del entrenamiento.',
+            image: 'images/Imagenes_Batidos/Protein smoothie.png'
+        },
+        'spinach': {
+            name: 'Batido de Espinaca',
+            price: 8500,
+            description: 'Saludable y refrescante. Una combinación de espinaca, manzana verde y pepino que aporta frescura y vitalidad de manera natural.',
+            image: 'images/Imagenes_Batidos/Spinach smoothie.png'
+        }
+    };
+
+    // 2. Obtener los elementos HTML
+    const mainProductImg = document.getElementById('main-product-img');
+    const mainProductName = document.getElementById('main-product-name');
+    const mainProductPrice = document.getElementById('main-product-price');
+    const mainProductDescription = document.getElementById('main-product-description');
+    const breadcrumbProductName = document.getElementById('breadcrumb-product-name');
+    const relatedItems = document.querySelectorAll('.related-item');
+    const quantitySelect = document.getElementById('cantidad');
+    const cartCountElement = document.querySelector('.nav-link .bi-cart').nextSibling;
+
+    // 3. Función para actualizar el contenido del producto
+    function updateProductInfo(productId) {
+        const product = products[productId];
+        if (product) {
+            mainProductImg.src = product.image;
+            mainProductImg.alt = product.name;
+            mainProductName.textContent = product.name;
+            mainProductPrice.textContent = `$${product.price.toLocaleString('es-CL')}`;
+            mainProductDescription.textContent = product.description;
+            breadcrumbProductName.textContent = product.name;
+        }
+    }
+
+    // 4. Agregar el 'event listener' a los productos relacionados
     relatedItems.forEach(item => {
         item.addEventListener('click', (event) => {
-            event.preventDefault(); // Evita que la página se recargue
+            event.preventDefault(); // Evita que el enlace recargue la página
             const productId = item.dataset.productId;
-            updatePageContent(productId);
+            updateProductInfo(productId);
         });
     });
+
+    // 5. Manejar el botón de añadir al carrito
+    const addToCartBtn = document.getElementById('add-to-cart-btn');
+    let currentProductId = 'berry'; // ID del producto inicial
+
+    // Función para actualizar el contador del carrito
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cartCountElement.textContent = ` Carrito (${cart.length})`;
+    }
+
+    // Listener para actualizar el producto principal en base a la URL
+    function updateProductFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || 'berry'; // Valor por defecto
+        currentProductId = productId;
+        updateProductInfo(currentProductId);
+    }
+    updateProductFromURL();
+
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const product = products[currentProductId];
+            const quantity = parseInt(quantitySelect.value);
+
+            if (product && !isNaN(quantity)) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                const itemToAdd = {
+                    id: currentProductId,
+                    name: product.name,
+                    price: product.price,
+                    quantity: quantity
+                };
+
+                cart.push(itemToAdd);
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                console.log(`Producto añadido al carrito: ${itemToAdd.name}, Cantidad: ${itemToAdd.quantity}`);
+                
+                // Reemplazamos alert() con una ventana emergente personalizada
+                const messageBox = document.createElement('div');
+                messageBox.className = 'alert alert-success mt-3';
+                messageBox.textContent = `${itemToAdd.name} fue agregado al carrito.`;
+                document.body.appendChild(messageBox);
+                setTimeout(() => {
+                    messageBox.remove();
+                }, 3000);
+
+                updateCartCount();
+            }
+        });
+    }
+
+    // Inicializar el contador del carrito al cargar la página
+    updateCartCount();
 });
