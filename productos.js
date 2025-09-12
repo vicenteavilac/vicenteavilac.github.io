@@ -78,8 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Agregar el 'event listener' a los productos relacionados
     relatedItems.forEach(item => {
         item.addEventListener('click', (event) => {
-            event.preventDefault(); // Evita que el enlace recargue la página
+            event.preventDefault();
             const productId = item.dataset.productId;
+            currentProductId = productId; // <-- Esto es clave
             updateProductInfo(productId);
         });
     });
@@ -91,7 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para actualizar el contador del carrito
     function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cartCountElement.textContent = ` Carrito (${cart.length})`;
+        // Suma la cantidad total de unidades
+        const totalUnits = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCountElement.textContent = ` Cart (${totalUnits})`;
     }
 
     // Listener para actualizar el producto principal en base a la URL
@@ -113,22 +116,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (product && !isNaN(quantity)) {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-                const itemToAdd = {
-                    id: currentProductId,
-                    name: product.name,
-                    price: product.price,
-                    quantity: quantity
-                };
+                // Buscar si el producto ya está en el carrito
+                const existingItem = cart.find(item => item.id === currentProductId);
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    cart.push({
+                        id: currentProductId,
+                        name: product.name,
+                        price: product.price,
+                        quantity: quantity
+                    });
+                }
 
-                cart.push(itemToAdd);
                 localStorage.setItem('cart', JSON.stringify(cart));
 
-                console.log(`Producto añadido al carrito: ${itemToAdd.name}, Cantidad: ${itemToAdd.quantity}`);
-                
-                // Reemplazamos alert() con una ventana emergente personalizada
+                // Mensaje de confirmación
                 const messageBox = document.createElement('div');
                 messageBox.className = 'alert alert-success mt-3';
-                messageBox.textContent = `${itemToAdd.name} fue agregado al carrito.`;
+                messageBox.textContent = `${product.name} fue agregado al carrito.`;
                 document.body.appendChild(messageBox);
                 setTimeout(() => {
                     messageBox.remove();

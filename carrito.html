@@ -33,8 +33,8 @@
             <a class="nav-link" href="index3.html">Registrar usuario</a>
           </div>
           <div class="nav-item dropdown me-3">
-            <a class="nav-link position-relative" href="carrito.html">
-              <i class="bi bi-cart"></i> Cart (<span id="cart-count">3</span>)
+            <a class="nav-link position-relative" href="carrito.html">  
+              <i class="bi bi-cart"></i> Cart (0)
             </a>
           </div>
         </div>
@@ -75,5 +75,70 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  function renderCarrito() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = '<p class="text-muted">Tu carrito está vacío.</p>';
+    }
+
+    cart.forEach((item, idx) => {
+      total += item.price * item.quantity;
+      cartItems.innerHTML += `
+        <div class="d-flex align-items-center mb-4 border-bottom pb-3">
+          <img src="${item.image || 'images/Imagenes_Batidos/' + item.id + ' smoothie.png'}" alt="${item.name}" class="me-3" style="width:100px;height:100px;object-fit:cover;">
+          <div class="flex-grow-1">
+            <div class="fw-bold">${item.name}</div>
+            <div class="small text-muted">${item.description || ''}</div>
+          </div>
+          <div class="text-end">
+            <div class="fw-bold mb-2">$ ${item.price.toLocaleString()}</div>
+            <div class="input-group input-group-sm" style="width:110px;">
+              <button class="btn btn-outline-secondary" onclick="cambiarCantidad(${idx}, -1)">-</button>
+              <input type="text" class="form-control text-center" value="${item.quantity}" readonly>
+              <button class="btn btn-outline-secondary" onclick="cambiarCantidad(${idx}, 1)">+</button>
+            </div>
+            <button class="btn btn-danger btn-sm mt-2" onclick="eliminarProducto(${idx})">Eliminar</button>
+          </div>
+        </div>
+      `;
+    });
+    document.getElementById('cart-total').textContent = `$ ${total.toLocaleString()}`;
+  }
+
+  function cambiarCantidad(idx, delta) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart[idx].quantity += delta;
+    if (cart[idx].quantity < 1) cart[idx].quantity = 1;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCarrito();
+  }
+
+  function eliminarProducto(idx) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(idx, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCarrito();
+    
+  }
+
+  // Inicializa el carrito al cargar la página
+  document.addEventListener('DOMContentLoaded', renderCarrito);
+
+  document.addEventListener('DOMContentLoaded', () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      // Suma la cantidad total de unidades
+      const totalUnits = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const cartCountElement = document.querySelector('.nav-link .bi-cart').nextSibling;
+      if (cartCountElement) {
+        cartCountElement.textContent = ` Cart (${totalUnits})`;
+      }
+    });
+</script>
 </body>
 </html>

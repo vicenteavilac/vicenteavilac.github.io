@@ -11,13 +11,12 @@
 </head>
 
 <body>
-   <!-- NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg bg-light border-bottom">
     <div class="container-fluid">
       <a class="navbar-brand fw-bold" href="index.html">Bati-Duoc</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -34,9 +33,9 @@
           </div>
           <div class="nav-item dropdown me-3">
             <a class="nav-link" href="index3.html">Registrar usuario</a>
-  a        </div>
+          </div>
           <div class="nav-item dropdown me-3">
-            <a class="nav-link position-relative" href="#">
+            <a class="nav-link position-relative" href="carrito.html">
               <i class="bi bi-cart"></i> Cart (0)
             </a>
           </div>
@@ -92,19 +91,25 @@
     <section class="related-products">
       <h6 class="mb-3">Batidos Relacionados</h6>
       <div class="d-flex gap-3 overflow-auto">
-        <a href="#" class="related-item" data-product-id="avocado" data-product-img="images/Imagenes_Batidos/Avocado smoothie.png">
+        <a href="#" class="related-item" data-product-id="avocado"
+          data-product-img="images/Imagenes_Batidos/Avocado smoothie.png">
           <img src="images/Imagenes_Batidos/Avocado smoothie.png" alt="Batido de Palta" class="img-fluid">
         </a>
-        <a href="#" class="related-item" data-product-id="banana-peanut" data-product-img="images/Imagenes_Batidos/Banana smoothie with peanut butter.png">
-          <img src="images/Imagenes_Batidos/Banana smoothie with peanut butter.png" alt="Batido de Plátano y Maní" class="img-fluid">
+        <a href="#" class="related-item" data-product-id="banana-peanut"
+          data-product-img="images/Imagenes_Batidos/Banana smoothie with peanut butter.png">
+          <img src="images/Imagenes_Batidos/Banana smoothie with peanut butter.png" alt="Batido de Plátano y Maní"
+            class="img-fluid">
         </a>
-        <a href="#" class="related-item" data-product-id="berry" data-product-img="images/Imagenes_Batidos/Berry smoothie.png">
+        <a href="#" class="related-item" data-product-id="berry"
+          data-product-img="images/Imagenes_Batidos/Berry smoothie.png">
           <img src="images/Imagenes_Batidos/Berry smoothie.png" alt="Batido de Frutos Rojos" class="img-fluid">
         </a>
-        <a href="#" class="related-item" data-product-id="kiwi" data-product-img="images/Imagenes_Batidos/Kiwi fruit smoothie.png">
+        <a href="#" class="related-item" data-product-id="kiwi"
+          data-product-img="images/Imagenes_Batidos/Kiwi fruit smoothie.png">
           <img src="images/Imagenes_Batidos/Kiwi fruit smoothie.png" alt="Batido de Kiwi" class="img-fluid">
         </a>
-        <a href="#" class="related-item" data-product-id="protein" data-product-img="images/Imagenes_Batidos/Protein smoothie.png">
+        <a href="#" class="related-item" data-product-id="protein"
+          data-product-img="images/Imagenes_Batidos/Protein smoothie.png">
           <img src="images/Imagenes_Batidos/Protein smoothie.png" alt="Batido de Proteína" class="img-fluid">
         </a>
       </div>
@@ -119,5 +124,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="productos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      // Suma la cantidad total de unidades
+      const totalUnits = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const cartCountElement = document.querySelector('.nav-link .bi-cart').nextSibling;
+      if (cartCountElement) {
+        cartCountElement.textContent = ` Cart (${totalUnits})`;
+      }
+    });
+  </script>
 </body>
+
 </html>
