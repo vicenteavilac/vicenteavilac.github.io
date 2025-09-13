@@ -91,3 +91,8 @@ form label.form-label {
     font-size: 0.85rem;
   }
 }
+.fixed-img {
+  height: 200px;         /* altura fija */
+  object-fit: cover;     /* recorta sin deformar */
+  width: 100%;           /* ocupa todo el ancho */
+}
