@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', (event) => {
             event.preventDefault();
             const productId = item.dataset.productId;
-            currentProductId = productId; // <-- Esto es clave
+            currentProductId = productId;
             updateProductInfo(productId);
         });
     });
