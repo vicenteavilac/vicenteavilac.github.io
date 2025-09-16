@@ -85,66 +85,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Manejar el botón de añadir al carrito
-    const addToCartBtn = document.getElementById('add-to-cart-btn');
-    let currentProductId = 'berry'; // ID del producto inicial
+// 5. Manejar el botón de añadir al carrito
+const addToCartBtn = document.getElementById('add-to-cart-btn');
+let currentProductId = 'berry'; // ID del producto inicial
 
-    // Función para actualizar el contador del carrito
-    function updateCartCount() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        // Suma la cantidad total de unidades
-        const totalUnits = cart.reduce((sum, item) => sum + item.quantity, 0);
-        cartCountElement.textContent = ` Cart (${totalUnits})`;
-    }
+// Función para actualizar el contador del carrito
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // Suma la cantidad total de unidades
+    const totalUnits = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountElement.textContent = ` Cart (${totalUnits})`;
+}
 
-    // Listener para actualizar el producto principal en base a la URL
-    function updateProductFromURL() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id') || 'berry'; // Valor por defecto
-        currentProductId = productId;
-        updateProductInfo(currentProductId);
-    }
-    updateProductFromURL();
+// Listener para actualizar el producto principal en base a la URL
+function updateProductFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id') || 'berry'; // Valor por defecto
+    currentProductId = productId;
+    updateProductInfo(currentProductId);
+}
+updateProductFromURL();
 
-    if (addToCartBtn) {
-        addToCartBtn.addEventListener('click', (event) => {
-            event.preventDefault();
+if (addToCartBtn) {
+    addToCartBtn.addEventListener('click', (event) => {
+        event.preventDefault();
 
-            const product = products[currentProductId];
-            const quantity = parseInt(quantitySelect.value);
+        const product = products[currentProductId];
+        const quantity = parseInt(quantitySelect.value);
 
-            if (product && !isNaN(quantity)) {
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (product && !isNaN(quantity)) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-                // Buscar si el producto ya está en el carrito
-                const existingItem = cart.find(item => item.id === currentProductId);
-                if (existingItem) {
-                    existingItem.quantity += quantity;
-                } else {
-                    cart.push({
-                        id: currentProductId,
-                        name: product.name,
-                        price: product.price,
-                        quantity: quantity
-                    });
-                }
-
-                localStorage.setItem('cart', JSON.stringify(cart));
-
-                // Mensaje de confirmación
-                const messageBox = document.createElement('div');
-                messageBox.className = 'alert alert-success mt-3';
-                messageBox.textContent = `${product.name} fue agregado al carrito.`;
-                document.body.appendChild(messageBox);
-                setTimeout(() => {
-                    messageBox.remove();
-                }, 3000);
-
-                updateCartCount();
+            // Buscar si el producto ya está en el carrito
+            const existingItem = cart.find(item => item.id === currentProductId);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: currentProductId,
+                    name: product.name,
+                    price: product.price,
+                    quantity: quantity,
+                    image: product.image 
+                });
             }
-        });
-    }
 
-    // Inicializar el contador del carrito al cargar la página
-    updateCartCount();
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Mensaje de confirmación
+            const messageBox = document.createElement('div');
+            messageBox.className = 'alert alert-success mt-3';
+            messageBox.textContent = `${product.name} fue agregado al carrito.`;
+            document.body.appendChild(messageBox);
+            setTimeout(() => {
+                messageBox.remove();
+            }, 3000);
+
+            updateCartCount();
+        }
+    });
+}
+
+// Inicializar el contador del carrito al cargar la página
+updateCartCount();
 });
