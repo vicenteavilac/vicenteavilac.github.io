@@ -51,14 +51,16 @@
     <div class="row">
       <!-- Formulario -->
       <div class="col-md-6 mb-4">
-        <form>
+        <form id="contactoForm" novalidate>
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre completo</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" maxlength="100" required>
+            <div class="invalid-feedback" id="nombreFeedback"></div>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" placeholder="tuemail@ejemplo.com" required>
+            <input type="email" class="form-control" id="email" placeholder="tuemail@ejemplo.com" maxlength="100" required>
+            <div class="invalid-feedback" id="emailFeedback"></div>
           </div>
           <div class="mb-3">
             <label for="asunto" class="form-label">Asunto</label>
@@ -66,7 +68,8 @@
           </div>
           <div class="mb-3">
             <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." maxlength="500" required></textarea>
+            <div class="invalid-feedback" id="mensajeFeedback"></div>
           </div>
           <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
         </form>
@@ -105,6 +108,67 @@
       const cartCountElement = document.querySelector('.nav-link .bi-cart').nextSibling;
       if (cartCountElement) {
         cartCountElement.textContent = ` Cart (${totalUnits})`;
+      }
+
+      // Validación de formulario de contacto
+      const contactoForm = document.getElementById('contactoForm');
+      if (contactoForm) {
+        contactoForm.addEventListener('submit', function(e) {
+          let valid = true;
+
+          // Nombre
+          const nombreInput = document.getElementById('nombre');
+          const nombreFeedback = document.getElementById('nombreFeedback');
+          const nombre = nombreInput.value.trim();
+          nombreInput.classList.remove('is-invalid');
+          nombreFeedback.textContent = '';
+          if (!nombre) {
+            nombreInput.classList.add('is-invalid');
+            nombreFeedback.textContent = 'El nombre es requerido.';
+            valid = false;
+          } else if (nombre.length > 100) {
+            nombreInput.classList.add('is-invalid');
+            nombreFeedback.textContent = 'El nombre no puede exceder los 100 caracteres.';
+            valid = false;
+          }
+
+          // Correo
+          const emailInput = document.getElementById('email');
+          const emailFeedback = document.getElementById('emailFeedback');
+          const correo = emailInput.value.trim();
+          const correoRegex = /^[^@\s]{1,}@((duoc\.cl)|(profesor\.duoc\.cl)|(gmail\.com))$/i;
+          emailInput.classList.remove('is-invalid');
+          emailFeedback.textContent = '';
+          if (correo.length > 100) {
+            emailInput.classList.add('is-invalid');
+            emailFeedback.textContent = 'El correo no puede exceder los 100 caracteres.';
+            valid = false;
+          } else if (correo && !correoRegex.test(correo)) {
+            emailInput.classList.add('is-invalid');
+            emailFeedback.textContent = 'Solo se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com.';
+            valid = false;
+          }
+
+          // Mensaje (comentario)
+          const mensajeInput = document.getElementById('mensaje');
+          const mensajeFeedback = document.getElementById('mensajeFeedback');
+          const mensaje = mensajeInput.value.trim();
+          mensajeInput.classList.remove('is-invalid');
+          mensajeFeedback.textContent = '';
+          if (!mensaje) {
+            mensajeInput.classList.add('is-invalid');
+            mensajeFeedback.textContent = 'El mensaje es requerido.';
+            valid = false;
+          } else if (mensaje.length > 500) {
+            mensajeInput.classList.add('is-invalid');
+            mensajeFeedback.textContent = 'El mensaje no puede exceder los 500 caracteres.';
+            valid = false;
+          }
+
+          if (!valid) {
+            e.preventDefault();
+          }
+        });
       }
     });
   </script>
